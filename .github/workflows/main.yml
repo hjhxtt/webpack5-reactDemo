@@ -32,7 +32,6 @@ jobs:
         folder: dist
         force: true
         commit-message: website deploy
-        repository-name: EralChen/simple-vuesri
 
     - name: Cleanup
       run: rm -rf docs/dist
