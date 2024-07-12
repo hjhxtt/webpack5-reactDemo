@@ -25,14 +25,12 @@ jobs:
         NODE_OPTIONS: --max-old-space-size=4096
 
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4.3.4
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: gh-pages
-        folder: dist
-        force: true
-        commit-message: website deploy
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist  # 需要根据项目的构建输出目录进行调整
 
     - name: Cleanup
-      run: rm -rf docs/dist
+      run: rm -rf ./dist
+        
 
